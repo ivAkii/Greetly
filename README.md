@@ -22,8 +22,8 @@ Welcome Bot is a highly customizable Discord bot designed to enhance your server
 
 1️⃣ **Clone the Repository**:  
    ```bash
-   git clone https://github.com/ivAkii/Welcome-Bot.git
-   cd Welcome-Bot
+   git clone https://github.com/ivAkii/WelcomeBot.git
+   cd WelcomeBot
    ```
 
 2️⃣ **Install Dependencies**:  
