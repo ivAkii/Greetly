@@ -1,96 +1,67 @@
-<div align="center">
-  
-  
-  <img src="welcome bot.png" />
+# Welcome Bot
 
-  <h2 align="center">Welcome Bot</h2>
+Welcome Bot is a Discord bot designed to provide customizable welcome messages and images for your server.
 
-welcome bot for discord bot with custom tags 🤌. By Atreya#2401
+## Features
 
+- **Custom Welcome Messages**: Send personalized text-based welcome messages.
+- **Custom Welcome Images**: Generate visually appealing welcome cards with user avatars.
+- **Easy Configuration**: Set up welcome channels, descriptions, images, and more with simple commands.
+- **MongoDB Integration**: Store and manage settings for each server.
 
-</div>
-<div align=center>
+## Installation
 
-  
-  <a href="https://github.com/discordjs">
-    <img src="https://img.shields.io/badge/discord.js-v12.5.3-blue.svg?logo=npm" alt="discordjs">
-  </a>
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ivAkii/Welcome-Bot.git
+   cd Welcome-Bot
+   ```
 
-  <a href="https://github.com/diwasatreya/Advanced-Command-Handler/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-Apache%202-blue" alt="license">
-  </a>
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-</div>
+3. Configure the bot:
+   - Rename `.env.example` to `.env` and fill in your bot token and MongoDB connection URL.
+   - Update `config.json` with your desired prefix and developer ID.
 
-[Watch Toturial](https://youtu.be/wPRRj_y4Ayk)
+4. Start the bot:
+   ```bash
+   npm start
+   ```
 
-[Join Server](https://discord.gg/gU7XAxTpX5)
+## Commands
 
-# Setup
-- Click Star and Fork this Code
-- ![image](https://user-images.githubusercontent.com/74746579/131488961-1768f9ea-edc1-43aa-9fa3-b3c2976aee09.png)
+### General Commands
+- `help` - Displays a list of available commands or details about a specific command.
 
-- After staring and forking click 'run on replit'
+### Welcome Configuration Commands
+- `setWelcomeChannel <#channel>` - Set the channel for welcome messages.
+- `setDescription <message>` - Set the description for welcome messages.
+- `setThumbnail <link>` - Set the thumbnail for welcome messages.
+- `setImage <link>` - Set the image for welcome messages.
+- `setWelcomeType <card|message>` - Choose between text-based or image-based welcome messages.
+- `reset` - Reset all welcome settings.
 
-[![image](https://camo.githubusercontent.com/807ef293459e367b2769d7b590e00f31e35d6b2e1c7bc4f570e37abbc3650f3c/68747470733a2f2f7265706c2e69742f62616467652f6769746875622f5a65726f446973636f72642f4769766561776179426f74)](https://repl.it/github/diwasatreya/Welcome-Bot)
+### Testing Commands
+- `testWelcomeMessage` - Test the current welcome message configuration.
+- `testWelcomeImage` - Test the current welcome image configuration.
 
-- Run `npm install` in console or shell
-- Add prefix and developerID in `config.json`
-- Add TOKEN in `.env` file or for replit user in secrets 
+## Requirements
 
-# Features
-## Image Welcome looks like this:
-You can get more exquisite templates upon joining our server.
+- Node.js v14 or higher
+- MongoDB database
+- Discord bot token
 
-![Image](https://media.discordapp.net/attachments/855820422960513054/882210623566540890/unknown.png?width=437&height=431)
+## Contributing
 
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-# Embed Welcome
-It looks like this:
+## License
 
-![embed](https://user-images.githubusercontent.com/74746579/131488177-cacfe559-02fe-4e6e-a8fc-4ce73c4fd81a.png)
+This project is licensed under the [Apache License 2.0](LICENSE).
 
-# with image given in args
+## Acknowledgments
 
-![withimg](https://media.discordapp.net/attachments/882211817378701352/882213001934024734/unknown.png?width=634&height=422)
-
-
-
-**Note:** You must set \`welcomechannel\` \`description\`, \`thumnail\` to deploy the welcome system and to use the test command. 
-
-## Only for \`setwelcomechannel\` [ Compulsory ]
-      setwelcomechannel <#channel>
-
-## Only for \`setdescription\` [ Compulsory ]
-      
-| Tags | Info | Example |
-| --- | --- | --- |
-| `?user` | Display username only | Supreme |
-| `?tag` | Display username with tag | Atreya#2401 |
-| `?mention` | Mention user in description | <@519666024220721152> |
-| `?server` | Display server name | Aromax Development |
-| `?rank` | Position to join server | 69th Member |
-
-## Only for \`setthumbnail\` [ Compulsory ]
-| Tags | Info |
-| -- | -- |
-| `?serveravatar` | Display server avatar in Thumnail |
-| `?useravatar` | Display new member avatar in Thumnail |
-
-## Only for \`setimage\` [ Optional ]
-You have to provide a valid link 
-
-## Only for \`setimagewelcome\` [ Optional ]
-setimagewelcome <#channel> : Send message of image only
-
-## Only for \`reset\` 
-It resets all everything: description, image, thumnail and welcome channel.
-
-## Only for \`test\`
-Use this command by after completing all the [ Compulsory ] tag was marked.
-
-Do \`help <command>\` to see the aliases of that command
-
-
-# Contact
-- Twitter: https://twitter.com/DiwasAtreya
+This bot is maintained by **netizenakii** and is a fork of the original project by **Atreya#2401**.
