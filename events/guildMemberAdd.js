@@ -1,5 +1,5 @@
 const { createCanvas, loadImage } = require('@napi-rs/canvas');
-const Discord = require('discord.js');
+const { EmbedBuilder, AttachmentBuilder } = require('discord.js');
 const WelcomeSettings = require('../models/WelcomeSettings');
 
 module.exports = async (member) => {
@@ -25,14 +25,14 @@ module.exports = async (member) => {
         .replace(/`?\?mention`?/g, `<@${member.user.id}>`)
         .replace(/`?\?rank`?/g, member.guild.memberCount);
 
-      const embed = new Discord.MessageEmbed()
+      const embed = new EmbedBuilder()
         .setTitle(`Welcome to ${member.guild.name}`)
         .setDescription(formattedDescription)
-        .setColor('RANDOM')
+        .setColor('Random')
         .setThumbnail(settings.thumbnail || member.guild.iconURL({ dynamic: true }))
         .setImage(settings.image || null);
 
-      return channel.send(embed);
+      return channel.send({ embeds: [embed] });
     }
 
     const [bgImage, fgImage, mascotImage, profileImage] = await Promise.all([
@@ -78,7 +78,7 @@ module.exports = async (member) => {
 
     const buffer = canvas.toBuffer('image/png');
     await channel.send({
-      files: [new Discord.MessageAttachment(buffer, 'welcome-image.png')],
+      files: [new AttachmentBuilder(buffer, { name: 'welcome-image.png' })],
     });
   } catch (error) {
     console.error('Failed to send welcome:', error);

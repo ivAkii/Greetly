@@ -1,9 +1,17 @@
 const { prefix } = require("./config.json");
 const { config } = require("dotenv");
 config(); // Load environment variables from .env file
-const Discord = require("discord.js");
+const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const mongoose = require("mongoose");
-const client = new Discord.Client({ disableEveryone: false });
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.MessageContent,
+  ],
+  partials: [Partials.Message, Partials.Channel, Partials.Reaction],
+});
 const { registerFonts } = require("./utils/fontLoader"); // Import font loader
 const loadHandlers = require("./handlers/handlerLoader"); // Import handler loader
 
@@ -28,7 +36,7 @@ client.on("ready", () => {
   console.log(`Successfully logged in as ${client.user.tag}`);
 });
 
-client.on("message", async (message) => {
+client.on("messageCreate", async (message) => {
   if (message.author.bot || !message.guild || !message.content.startsWith(prefix)) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);

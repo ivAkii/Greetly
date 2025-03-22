@@ -1,6 +1,6 @@
 {
-  "name": "Welcome-Bot",
-  "version": "1.0.0",
+  "name": "WelcomeBot",
+  "version": "2.0.0",
   "description": "A Discord bot with custom welcome features.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "dependencies": {
     "@napi-rs/canvas": "^0.1.68",
     "ascii-table": "0.0.9",
-    "discord.js": "^12.5.3",
+    "discord.js": "^14.7.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^8.12.2",

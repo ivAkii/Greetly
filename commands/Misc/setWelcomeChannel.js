@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { PermissionsBitField } = require("discord.js");
 const WelcomeSettings = require('../../models/WelcomeSettings');
 
 module.exports = {
@@ -8,7 +9,7 @@ module.exports = {
   category: "Misc",
   description: "Set the welcome channel",
   run: async (client, message, args) => {
-    if (!message.member.permissions.has("ADMINISTRATOR")) {
+    if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
       return message.channel.send("You do not have enough permission to use this command.");
     }
 

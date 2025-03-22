@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
 const { createCanvas, loadImage, GlobalFonts } = require('@napi-rs/canvas');
 const WelcomeSettings = require('../../models/WelcomeSettings');
+const { AttachmentBuilder } = require('discord.js');
 
 GlobalFonts.registerFromPath('./fonts/Quicksand-SemiBold.ttf', 'Quicksand-SemiBold');
 GlobalFonts.registerFromPath('./fonts/Montserratb.ttf', 'Montserrat-Bold');
 
 module.exports = {
   name: "testWelcomeImage",
-  aliases: ["testimg"], 
+  aliases: ["twi"], 
   category: "Welcome Card",
-  usage: "testimg",
   description: "Test the welcome image.",
   run: async (client, message, args) => {
     const m = await message.channel.send(`**${message.author.username}**, please wait. Generating a test welcome image...`);
@@ -63,7 +63,7 @@ module.exports = {
       const buffer = canvas.toBuffer('image/png');
       m.delete();
       return message.channel.send({
-        files: [new Discord.MessageAttachment(buffer, "welcome-image.png")],
+        files: [new AttachmentBuilder(buffer, { name: "welcome-image.png" })],
       });
     } catch (error) {
       console.error('Failed to generate the welcome image:', error);

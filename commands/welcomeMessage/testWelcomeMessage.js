@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const WelcomeSettings = require("../../models/WelcomeSettings");
 
 module.exports = {
   name: "testWelcomeMessage",
-  aliases: ["test"], 
+  aliases: ["twm"], 
   category: "Misc",
   description: "Test the welcome message.",
   run: async (client, message, args) => {
@@ -29,15 +30,14 @@ module.exports = {
         .replace(/`?\?mention`?/g, `<@${message.author.id}>`)
         .replace(/`?\?rank`?/g, message.guild.memberCount);
 
-      const embed = new Discord.MessageEmbed()
+      const embed = new EmbedBuilder()
         .setTitle(`Welcome to ${message.guild.name}`)
-        .setDescription(
-          `${formattedDescription}`)
-        .setColor("RANDOM")
+        .setDescription(formattedDescription)
+        .setColor("Random")
         .setImage(image)
         .setThumbnail(thumbnail);
 
-      await channel.send(embed);
+      await channel.send({ embeds: [embed] });
     } catch (error) {
       console.error("Error in test command:", error);
       message.channel.send("An error occurred while testing the welcome message.");

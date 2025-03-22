@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const { prefix } = require("../../config.json");
 
 module.exports = {
@@ -17,14 +17,16 @@ module.exports = {
         return message.channel.send(`Unknown Command: \`${args[0]}\``);
       }
 
-      const embed = new MessageEmbed()
+      const embed = new EmbedBuilder()
         .setTitle(`Command: ${command.name}`)
-        .addField("Description", command.description || "No description provided.")
-        .addField("Usage", `\`${prefix}${command.usage || "No usage provided."}\``)
-        .addField("Aliases", command.aliases ? `\`${command.aliases.join(", ")}\`` : "None")
-        .setColor("BLUE");
+        .addFields(
+          { name: "Description", value: command.description || "No description provided." },
+          { name: "Usage", value: `\`${prefix}${command.usage || "No usage provided."}\`` },
+          { name: "Aliases", value: command.aliases ? `\`${command.aliases.join(", ")}\`` : "None" }
+        )
+        .setColor("Blue");
 
-      return message.channel.send(embed);
+      return message.channel.send({ embeds: [embed] });
     }
 
     // Show a list of all commands grouped by category
@@ -37,20 +39,20 @@ module.exports = {
       categories[category].push(command.name);
     });
 
-    const embed = new MessageEmbed()
+    const embed = new EmbedBuilder()
       .setTitle("Help Menu")
       .setDescription(
         `Use \`${prefix}help [command]\` to get details about a specific command.`
       )
-      .setColor("BLUE");
+      .setColor("Blue");
 
     for (const [category, commands] of Object.entries(categories)) {
-      embed.addField(
-        `${category} Commands`,
-        `\`${commands.join("`, `")}\``
-      );
+      embed.addFields({
+        name: `${category} Commands`,
+        value: `\`${commands.join("`, `")}\``,
+      });
     }
 
-    return message.channel.send(embed);
+    return message.channel.send({ embeds: [embed] });
   },
 };
