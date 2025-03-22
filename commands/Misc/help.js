@@ -40,7 +40,7 @@ module.exports = {
     });
 
     const embed = new EmbedBuilder()
-      .setTitle("Help Menu")
+      .setTitle("Greetly Help Menu")
       .setDescription(
         `Use \`${prefix}help [command]\` to get details about a specific command.`
       )

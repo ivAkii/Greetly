@@ -1,5 +1,5 @@
 {
-  "name": "WelcomeBot",
+  "name": "Greetly",
   "version": "2.0.0",
   "description": "A Discord bot with custom welcome features.",
   "main": "index.js",

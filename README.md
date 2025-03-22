@@ -1,6 +1,6 @@
-# 🎉 Welcome Bot
+# 🎉 Greetly
 
-Welcome Bot is a highly customizable Discord bot designed to enhance your server's onboarding experience with personalized welcome messages and visually appealing welcome cards for free!.
+Greetly is a highly customizable Discord bot designed to enhance your server's onboarding experience with personalized welcome messages and visually appealing welcome cards for free!.
 
 ## ✨ Features
 
@@ -22,8 +22,8 @@ Welcome Bot is a highly customizable Discord bot designed to enhance your server
 
 1️⃣ **Clone the Repository**:  
    ```bash
-   git clone https://github.com/ivAkii/WelcomeBot.git
-   cd WelcomeBot
+   git clone https://github.com/ivAkii/Greetly.git
+   cd Greetly
    ```
 
 2️⃣ **Install Dependencies**:  

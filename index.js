@@ -33,7 +33,7 @@ process.on("UnhandledRejection", console.error);
 // Start the bot
 client.on("ready", () => {
   client.user.setStatus("dnd"); // Change to online, dnd, or idle
-  console.log(`Successfully logged in as ${client.user.tag}`);
+  console.log(`Successfully logged in as ${client.user.tag} `);
 });
 
 client.on("messageCreate", async (message) => {

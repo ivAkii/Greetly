@@ -8,7 +8,7 @@ This fork introduces the following improvements:
 
 ## 2️⃣ Welcome Card with Flexible Configuration
 
-🎨 Added support for customizable welcome cards with the following options:  
+🎨 Added support for customizable Welcome cards with the following options:  
 - 🖼️ Background images.  
 - 🖼️ Foreground images.  
 - 🖼️ Mascot images.  

@@ -6,7 +6,7 @@ module.exports = (client) => {
   client.aliases = new Map();
 
   console.log("========================================");
-  console.log("          Loading Commands...           ");
+  console.log("          Loading Greetly Commands...           ");
   console.log("========================================");
 
   const commandFolders = [
