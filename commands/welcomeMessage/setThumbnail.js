@@ -3,7 +3,7 @@ const WelcomeSettings = require("../../models/WelcomeSettings");
 
 module.exports = {
   name: "setthumbnail",
-  aliases: ["thumb"], // Simplified aliases
+  aliases: ["thumb"],
   category: "Welcome Message",
   usage: "thumb <link>",
   description: "Set the thumbnail for the welcome message",

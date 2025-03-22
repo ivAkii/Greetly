@@ -4,7 +4,7 @@ const WelcomeSettings = require('../../models/WelcomeSettings');
 
 module.exports = {
   name: "setWelcomeChannel",
-  aliases: ["setwelcome", "channel"], // Simplified aliases
+  aliases: ["setwelcome", "channel"],
   usage: "setWelcomeChannel <#channel>",
   category: "Misc",
   description: "Set the welcome channel",

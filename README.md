@@ -67,6 +67,32 @@ Greetly is a highly customizable Discord bot designed to enhance your server's o
 - **`testWelcomeMessage`**: Test the current welcome message configuration.  
 - **`testWelcomeImage`**: Test the current welcome image configuration.
 
+## 🎨 Adding Mascot, Background, and Foreground Images
+
+To customize your welcome cards, you can add your own mascot, background, and foreground images. Use the following commands to set these images:
+
+- **Set Background Image**:  
+  Command: `setBackgroundImage <image_url>`  
+  Example: `setBackgroundImage https://example.com/background.png`
+
+- **Set Foreground Image**:  
+  Command: `setForegroundImage <image_url>`  
+  Example: `setForegroundImage https://example.com/foreground.png`
+
+- **Set Mascot Image**:  
+  Command: `setMascotImage <image_url>`  
+  Example: `setMascotImage https://example.com/mascot.png`
+
+### 🎨 Templates
+
+If you need templates for these images, you can use the following links:
+
+- [Background Template](https://github.com/ivAkii/Greetly/blob/main/assets/bg.png)  
+- [Foreground Template](https://github.com/ivAkii/Greetly/blob/main/assets/fg.png)  
+- [Mascot Template](https://github.com/ivAkii/Greetly/blob/main/assets/mascot.png)
+
+These templates can help you design your custom images to fit perfectly with the welcome card layout.
+
 ## 🛠️ Requirements
 
 - **Node.js**: Version 14 or higher.  

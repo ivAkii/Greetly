@@ -3,7 +3,7 @@ const WelcomeSettings = require("../../models/WelcomeSettings");
 
 module.exports = {
   name: "setimage",
-  aliases: ["img"], // Simplified aliases
+  aliases: ["img"],
   category: "Welcome Message",
   usage: "img <link>",
   description: "Set the image for the welcome message",

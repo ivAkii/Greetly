@@ -2,7 +2,7 @@ const WelcomeSettings = require('../../models/WelcomeSettings');
 
 module.exports = {
   name: "setWelcomeType",
-  aliases: ["settype", "type"], // Simplified aliases
+  aliases: ["settype", "type"],
   usage: "setWelcomeType <card|message>",
   category: "Misc",
   description: "Set the type of welcome (card or message).",

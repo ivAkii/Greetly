@@ -2,7 +2,7 @@ const WelcomeSettings = require('../../models/WelcomeSettings');
 
 module.exports = {
   name: "setMascotImage",
-  aliases: ["setmc", "mascot"], // Simplified aliases
+  aliases: ["setmc", "mascot"],
   category: "Welcome Card",
   usage: "setMascotImage <image_url>",
   description: "Set the mascot image for the welcome card.",

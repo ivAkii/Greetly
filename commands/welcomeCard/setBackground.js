@@ -2,7 +2,7 @@ const WelcomeSettings = require('../../models/WelcomeSettings');
 
 module.exports = {
   name: "setBackgroundImage",
-  aliases: ["setbg", "background"], // Simplified aliases
+  aliases: ["setbg", "background"],
   category: "Welcome Card",
   usage: "setBackgroundImage <image_url>",
   description: "Set the background image for the welcome card.",

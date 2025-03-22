@@ -2,7 +2,7 @@ const WelcomeSettings = require('../../models/WelcomeSettings');
 
 module.exports = {
   name: "setUsernameColor",
-  aliases: ["setcolor", "usernameColor", "color"], // Simplified aliases
+  aliases: ["setcolor", "usernameColor", "color"],
   category: "Welcome Card",
   usage: "setUsernameColor <hex_color>",
   description: "Set the username color for the welcome card.",

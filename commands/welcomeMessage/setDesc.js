@@ -3,7 +3,7 @@ const WelcomeSettings = require("../../models/WelcomeSettings");
 
 module.exports = {
   name: "setdescription",
-  aliases: ["desc"], // Simplified aliases
+  aliases: ["desc"],
   category: "Welcome Message",
   usage: "desc <message>",
   description: "Set the description for the welcome channel",

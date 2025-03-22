@@ -18,13 +18,13 @@ module.exports = {
       }
 
       const embed = new EmbedBuilder()
-        .setTitle(`Command: ${command.name}`)
+        .setTitle(`📄 Command: ${command.name}`)
         .addFields(
-          { name: "Description", value: command.description || "No description provided." },
-          { name: "Usage", value: `\`${prefix}${command.usage || "No usage provided."}\`` },
-          { name: "Aliases", value: command.aliases ? `\`${command.aliases.join(", ")}\`` : "None" }
+          { name: "📝 Description", value: command.description || "No description provided." },
+          { name: "📖 Usage", value: `\`${prefix}${command.usage || "No usage provided."}\`` },
+          { name: "🔗 Aliases", value: command.aliases ? `\`${command.aliases.join(", ")}\`` : "None" }
         )
-        .setColor("Blue");
+        .setColor("#FFDE00");
 
       return message.channel.send({ embeds: [embed] });
     }
@@ -40,18 +40,28 @@ module.exports = {
     });
 
     const embed = new EmbedBuilder()
-      .setTitle("Greetly Help Menu")
+      .setTitle("📚 Greetly Help Menu")
       .setDescription(
         `Use \`${prefix}help [command]\` to get details about a specific command.`
       )
-      .setColor("Blue");
+      .setColor("#FFDE00");
 
     for (const [category, commands] of Object.entries(categories)) {
       embed.addFields({
-        name: `${category} Commands`,
+        name: `📂 ${category} Commands`,
         value: `\`${commands.join("`, `")}\``,
       });
     }
+
+    // Add a guide section for mascot, background, and foreground images
+    embed.addFields({
+      name: "🎨 Customizing Your Welcome Card",
+      value: `Personalize your welcome cards with the following commands:\n\n` +
+      `- 🖼️ **Set Background Image**: \`${prefix}setBackgroundImage <image_url>\`\n` +
+      `- 🌟 **Set Foreground Image**: \`${prefix}setForegroundImage <image_url>\`\n` +
+      `- 🐾 **Set Mascot Image**: \`${prefix}setMascotImage <image_url>\`\n\n` +
+      `Find templates and examples [here](https://github.com/ivAkii/Greetly/tree/main/assets).`,
+    });
 
     return message.channel.send({ embeds: [embed] });
   },
