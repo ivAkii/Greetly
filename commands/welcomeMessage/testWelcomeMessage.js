@@ -3,7 +3,7 @@ const WelcomeSettings = require("../../models/WelcomeSettings");
 
 module.exports = {
   name: "testWelcomeMessage",
-  aliases: ["test"], // Simplified aliases
+  aliases: ["test"], 
   category: "Misc",
   description: "Test the welcome message.",
   run: async (client, message, args) => {

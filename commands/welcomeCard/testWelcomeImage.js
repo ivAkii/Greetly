@@ -7,9 +7,9 @@ GlobalFonts.registerFromPath('./fonts/Montserratb.ttf', 'Montserrat-Bold');
 
 module.exports = {
   name: "testWelcomeImage",
-  aliases: ["imgtest"], // Simplified aliases
+  aliases: ["testimg"], 
   category: "Welcome Card",
-  usage: "imgtest",
+  usage: "testimg",
   description: "Test the welcome image.",
   run: async (client, message, args) => {
     const m = await message.channel.send(`**${message.author.username}**, please wait. Generating a test welcome image...`);
@@ -31,7 +31,6 @@ module.exports = {
       const ctx = canvas.getContext('2d');
 
       ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-
       ctx.drawImage(fgImage, 0, 0, canvas.width, canvas.height);
 
       const profileSize = 120;
@@ -57,9 +56,7 @@ module.exports = {
 
       ctx.fillStyle = '#FFFFFF'; 
       ctx.font = 'bold 20px Montserrat-Bold'; 
-
-      let text2 = `WELCOME TO ${message.guild.name.toUpperCase()}`;
-      ctx.fillText(text2, profileX + profileSize - 40, profileY + 18);
+      ctx.fillText(`WELCOME TO ${message.guild.name.toUpperCase()}`, profileX + profileSize - 40, profileY + 18);
 
       ctx.drawImage(mascotImage, 0, 0, canvas.width, canvas.height);
 

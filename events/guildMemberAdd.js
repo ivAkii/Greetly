@@ -35,7 +35,6 @@ module.exports = async (member) => {
       return channel.send(embed);
     }
 
-    // Send an image-based welcome card
     const [bgImage, fgImage, mascotImage, profileImage] = await Promise.all([
       loadImage(settings.bgImage || './assets/bg.png'),
       loadImage(settings.fgImage || './assets/fg.png'),
@@ -46,13 +45,9 @@ module.exports = async (member) => {
     const canvas = createCanvas(800, 200);
     const ctx = canvas.getContext('2d');
 
-    // Draw the background image
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-
-    // Draw the foreground image
     ctx.drawImage(fgImage, 0, 0, canvas.width, canvas.height);
 
-    // Draw the profile image inside a circle
     const profileSize = 120;
     const profileX = 110;
     const profileY = canvas.height / 2;
@@ -65,27 +60,22 @@ module.exports = async (member) => {
     ctx.drawImage(profileImage, profileX - profileSize / 2, profileY - profileSize / 2, profileSize, profileSize);
     ctx.restore();
 
-    // Add "HELLO" text
     ctx.fillStyle = '#FFFFFF';
     ctx.font = 'bold 35px Montserrat-Bold';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
     ctx.fillText('HELLO,', profileX + profileSize - 40, profileY - 18);
 
-    // Add username text
     ctx.fillStyle = settings.usernameColor || '#FFFFFF';
     ctx.fillText(member.user.username.toUpperCase(), profileX + profileSize + 100, profileY - 18);
 
-    // Add welcome text
     ctx.fillStyle = '#FFFFFF';
     ctx.font = 'bold 20px Montserrat-Bold';
     const text2 = `WELCOME TO ${member.guild.name.toUpperCase()}`;
     ctx.fillText(text2, profileX + profileSize - 40, profileY + 18);
 
-    // Draw the mascot image
     ctx.drawImage(mascotImage, 0, 0, canvas.width, canvas.height);
 
-    // Generate buffer and send the image
     const buffer = canvas.toBuffer('image/png');
     await channel.send({
       files: [new Discord.MessageAttachment(buffer, 'welcome-image.png')],

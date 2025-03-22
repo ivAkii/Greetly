@@ -39,10 +39,17 @@ Welcome Bot is a Discord bot designed to provide customizable welcome messages a
 ### Welcome Configuration Commands
 - `setWelcomeChannel <#channel>` - Set the channel for welcome messages.
 - `setDescription <message>` - Set the description for welcome messages.
+  - **Supported Tags**:
+    | Tags       | Info                        | Example                     |
+    |------------|-----------------------------|-----------------------------|
+    | `?user`    | Display username only       | Supreme                     |
+    | `?tag`     | Display username with tag   | Atreya#2401                |
+    | `?mention` | Mention user in description | <@519666024220721152>      |
+    | `?server`  | Display server name         | Aromax Development         |
+    | `?rank`    | Position to join server     | 69th Member                |
 - `setThumbnail <link>` - Set the thumbnail for welcome messages.
 - `setImage <link>` - Set the image for welcome messages.
 - `setWelcomeType <card|message>` - Choose between text-based or image-based welcome messages.
-- `reset` - Reset all welcome settings.
 
 ### Testing Commands
 - `testWelcomeMessage` - Test the current welcome message configuration.
